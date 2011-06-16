@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arquillian xmlns="http://www.jboss.org/arquillian-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.jboss.org/arquillian-1.0 http://jboss.org/schema/arquillian/arquillian-1.0.xsd">
+
+    <group qualifier="Grid">
+        <container qualifier="container.active-1">
+            <configuration>
+                <property name="jbossHome">target/jbossas</property>
+                <property name="managementPort">9999</property>
+                <property name="jmxPort">1090</property>
+                <property name="httpPort">8080</property>
+            </configuration>
+            <!-- 
+                [ARQ-425] config parser code not in sync with schema
+                Make executionType configurable
+             -->
+            <protocol type="jmx-as7">
+                <configuration>
+                    <property name="executionType">REMOTE</property>
+                </configuration>
+            </protocol>
+        </container>
+
+        <container qualifier="container.active-2">
+            <configuration>
+                <property name="jbossHome">target/jbossas-2</property>
+                <property name="managementPort">19999</property>
+                <property name="jmxPort">1190</property>
+                <property name="httpPort">8180</property>
+            </configuration>
+            <!-- 
+                [ARQ-425] config parser code not in sync with schema
+                Make executionType configurable
+             -->
+            <protocol type="jmx-as7">
+                <configuration>
+                    <property name="executionType">REMOTE</property>
+                </configuration>
+            </protocol>
+        </container>
+        <container qualifier="container.active-3">
+            <configuration>
+                <property name="jbossHome">target/jbossas-3</property>
+                <property name="managementPort">29999</property>
+                <property name="jmxPort">1290</property>
+                <property name="httpPort">8280</property>
+            </configuration>
+            <!-- 
+                [ARQ-425] config parser code not in sync with schema
+                Make executionType configurable
+             -->
+            <protocol type="jmx-as7">
+                <configuration>
+                    <property name="executionType">REMOTE</property>
+                </configuration>
+            </protocol>
+        </container>
+    </group>
+
+</arquillian>
